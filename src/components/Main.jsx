@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
-import requests from "../Requests";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import requests from "../Requests";
 
 const Main = () => {
-  const [movies, SetMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   const movie = movies[Math.floor(Math.random() * movies.length)];
 
   useEffect(() => {
-    axios.get(requests.requestPopular).then((res) => {
-      SetMovies(res.data.results);
+    axios.get(requests.requestPopular).then((response) => {
+      setMovies(response.data.results);
     });
   }, []);
+  //   console.log(movie);
 
   const truncateString = (str, num) => {
     if (str?.length > num) {
@@ -22,12 +23,12 @@ const Main = () => {
   };
 
   return (
-    <div className="w-full h-[550px] text-white">
+    <div className="w-full h-[600px] text-white">
       <div className="w-full h-full">
-        <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
+        <div className="absolute w-full h-[600px] bg-gradient-to-r from-black"></div>
         <img
           className="w-full h-full object-cover"
-          src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
           alt={movie?.title}
         />
         <div className="absolute w-full top-[20%] p-4 md:p-8">
