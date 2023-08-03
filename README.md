@@ -16,8 +16,8 @@
 
 ## Screenshots
 ![screenshot of website 1](<screenshots/main.jpeg>)
-![screenshot of website 2](<screenshots/categories.jpeg>)
 ![screenshot of website 3](<screenshots/signin.jpeg>)
+![screenshot of website 2](<screenshots/categories.jpeg>)
 
 
 ## Technologies used
